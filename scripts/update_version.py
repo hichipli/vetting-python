@@ -86,8 +86,13 @@ def get_current_version() -> str:
 
 def main():
     """Main function."""
+    if len(sys.argv) == 1:
+        # Just show current version
+        print(f"Current version: {get_current_version()}")
+        return
+    
     if len(sys.argv) != 2:
-        print("Usage: python update_version.py <new_version>")
+        print("Usage: python update_version.py [new_version]")
         print(f"Current version: {get_current_version()}")
         sys.exit(1)
     

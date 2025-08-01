@@ -123,25 +123,25 @@ pre-release: clean format type-check test build
 
 # Version management targets
 version:
-	@python scripts/update_version.py
+	@python3 scripts/update_version.py
 
 bump-patch:
-	@current_version=$$(python -c "import re; content=open('pyproject.toml').read(); print(re.search(r'version = \"([^\"]*)', content).group(1))"); \
+	@current_version=$$(python3 -c "import re; content=open('pyproject.toml').read(); print(re.search(r'version = \"([^\"]*)', content).group(1))"); \
 	IFS='.' read -ra ADDR <<< "$$current_version"; \
 	new_version="$${ADDR[0]}.$${ADDR[1]}.$$((ADDR[2] + 1))"; \
-	python scripts/update_version.py $$new_version
+	python3 scripts/update_version.py $$new_version
 
 bump-minor:
-	@current_version=$$(python -c "import re; content=open('pyproject.toml').read(); print(re.search(r'version = \"([^\"]*)', content).group(1))"); \
+	@current_version=$$(python3 -c "import re; content=open('pyproject.toml').read(); print(re.search(r'version = \"([^\"]*)', content).group(1))"); \
 	IFS='.' read -ra ADDR <<< "$$current_version"; \
 	new_version="$${ADDR[0]}.$$((ADDR[1] + 1)).0"; \
-	python scripts/update_version.py $$new_version
+	python3 scripts/update_version.py $$new_version
 
 bump-major:
-	@current_version=$$(python -c "import re; content=open('pyproject.toml').read(); print(re.search(r'version = \"([^\"]*)', content).group(1))"); \
+	@current_version=$$(python3 -c "import re; content=open('pyproject.toml').read(); print(re.search(r'version = \"([^\"]*)', content).group(1))"); \
 	IFS='.' read -ra ADDR <<< "$$current_version"; \
 	new_version="$$((ADDR[0] + 1)).0.0"; \
-	python scripts/update_version.py $$new_version
+	python3 scripts/update_version.py $$new_version
 
 release:
 ifndef VERSION
@@ -149,7 +149,7 @@ ifndef VERSION
 	@exit 1
 endif
 	@echo "Creating release $(VERSION)..."
-	python scripts/update_version.py $(VERSION)
+	python3 scripts/update_version.py $(VERSION)
 	git add -A
 	git commit -m "Bump version to $(VERSION)"
 	git tag v$(VERSION)

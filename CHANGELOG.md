@@ -8,9 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Initial planning for future features
+- Automated PyPI publishing workflow with GitHub Actions
+- Comprehensive security and contribution guidelines
+- CODEOWNERS file for automatic code review requests
+- Version management scripts and Makefile commands
 
 ## [0.1.0] - 2025-07-31
+
+### Published
+- ✅ **Released to PyPI**: https://pypi.org/project/vetting-python/0.1.0/
+- ✅ **Installation**: `pip install vetting-python`
 
 ### Added
 - **Core Framework**: Complete implementation of the dual-LLM VETTING architecture

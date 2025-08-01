@@ -1,5 +1,10 @@
 # VETTING Framework - Python Implementation
 
+[![PyPI version](https://badge.fury.io/py/vetting-python.svg)](https://badge.fury.io/py/vetting-python)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/vetting-python)](https://pypi.org/project/vetting-python/)
+
 A Python implementation of the VETTING (Verification and Evaluation Tool for Targeting Invalid Narrative Generation) framework for LLM safety and educational applications.
 
 **Developed by [VIABLE Lab](https://www.viablelab.org/) at the University of Florida.**
@@ -43,11 +48,13 @@ The VETTING framework implements a dual-LLM architecture that separates conversa
 
 ## Installation
 
-### From PyPI (once published):
+### From PyPI:
 
 ```bash
 pip install vetting-python
 ```
+
+**✅ Now available on PyPI!** View the package: [https://pypi.org/project/vetting-python/](https://pypi.org/project/vetting-python/)
 
 ### From Source:
 
@@ -596,8 +603,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Changelog
 
-### v0.1.0 (2025-07-31)
+### v0.1.0 (2025-07-31) - 🎉 PUBLISHED TO PYPI
 
+- ✅ **Published to PyPI**: [vetting-python](https://pypi.org/project/vetting-python/)
+- ✅ **Installation**: `pip install vetting-python`
 - ✅ Dual-LLM architecture implementation
 - ✅ OpenAI, Claude, and Gemini provider support
 - ✅ Educational vetting capabilities
@@ -605,6 +614,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - ✅ Comprehensive configuration system
 - ✅ Safety feature integration
 - ✅ Example applications and documentation
+- ✅ Automated publishing workflow with GitHub Actions
+- ✅ Security and contribution guidelines
 
 ---
 

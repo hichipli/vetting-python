@@ -4,7 +4,7 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1iB9QXe5YjW2S0ELZunrcm6ZnMCBKdI7m?usp=sharing)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/vetting-python)](https://pypi.org/project/vetting-python/)
+[![PyPI version](https://img.shields.io/pypi/v/vetting-python)](https://pypi.org/project/vetting-python/)
 
 A Python implementation of the VETTING (Verification and Evaluation Tool for Targeting Invalid Narrative Generation) framework for LLM safety and educational applications.
 

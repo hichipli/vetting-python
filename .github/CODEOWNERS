@@ -1,7 +1,7 @@
 # Global code owners for the VETTING Python framework
 # These users will be automatically requested for review when PRs are opened
 
-# Global ownership - you as the main maintainer
+# Global ownership
 * @hichipli
 
 # Core framework files require extra attention

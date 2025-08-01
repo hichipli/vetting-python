@@ -1,0 +1,24 @@
+# Include important files in the distribution
+include README.md
+include LICENSE
+include CHANGELOG.md
+include pyproject.toml
+
+# Include package files
+recursive-include vetting_python *.py
+recursive-include vetting_python *.typed
+
+# Include examples
+recursive-include vetting_python/examples *.py
+
+# Exclude development and build files
+exclude .gitignore
+exclude .pre-commit-config.yaml
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * .DS_Store
+recursive-exclude tests *
+recursive-exclude docs *
+recursive-exclude .github *
+exclude tox.ini
+exclude Makefile

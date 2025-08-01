@@ -10,6 +10,11 @@ on:
         required: false
         type: string
 
+# Security: Only allow publishing from main branch
+concurrency:
+  group: pypi-publish
+  cancel-in-progress: false
+
 jobs:
   publish:
     name: Publish to PyPI
@@ -20,6 +25,14 @@ jobs:
       contents: read
     
     steps:
+    - name: Security check - Verify branch
+      run: |
+        if [ "${{ github.ref }}" != "refs/heads/main" ] && [ "${{ github.event_name }}" != "release" ]; then
+          echo "❌ Publishing is only allowed from main branch or releases"
+          exit 1
+        fi
+        echo "✅ Branch verification passed"
+
     - name: Checkout code
       uses: actions/checkout@v4
       with:

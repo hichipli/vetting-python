@@ -1,0 +1,26 @@
+# Global code owners for the VETTING Python framework
+# These users will be automatically requested for review when PRs are opened
+
+# Global ownership - you as the main maintainer
+* @hichipli
+
+# Core framework files require extra attention
+/vetting_python/core/ @hichipli
+/vetting_python/providers/ @hichipli
+
+# Configuration and build files
+pyproject.toml @hichipli
+setup.py @hichipli
+Makefile @hichipli
+
+# GitHub workflows and automation
+/.github/ @hichipli
+
+# Documentation
+README.md @hichipli
+CHANGELOG.md @hichipli
+*.md @hichipli
+
+# Release and version management
+/scripts/ @hichipli
+VERSION_INFO.md @hichipli

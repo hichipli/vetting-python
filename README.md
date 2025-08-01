@@ -3,6 +3,7 @@
 [![PyPI version](https://badge.fury.io/py/vetting-python.svg)](https://badge.fury.io/py/vetting-python)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1iB9QXe5YjW2S0ELZunrcm6ZnMCBKdI7m?usp=sharing)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/vetting-python)](https://pypi.org/project/vetting-python/)
 
 A Python implementation of the VETTING (Verification and Evaluation Tool for Targeting Invalid Narrative Generation) framework for LLM safety and educational applications.
@@ -56,6 +57,12 @@ pip install vetting-python
 
 **✅ Now available on PyPI!** View the package: [https://pypi.org/project/vetting-python/](https://pypi.org/project/vetting-python/)
 
+### 🚀 Try it Now - Interactive Demo:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1iB9QXe5YjW2S0ELZunrcm6ZnMCBKdI7m?usp=sharing)
+
+**Get started in seconds!** Click the Colab badge above to try VETTING framework with interactive examples - no installation required!
+
 ### From Source:
 
 ```bash
@@ -75,7 +82,9 @@ Optional dependencies:
 pip install PyYAML  # For YAML configuration files
 ```
 
-## Quick Start
+## 🎯 Quick Start
+
+> **🚀 Want to try immediately?** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1iB9QXe5YjW2S0ELZunrcm6ZnMCBKdI7m?usp=sharing) - Interactive demo with examples!
 
 ### 1. Set up your API keys
 
@@ -530,6 +539,12 @@ Ensure training materials adhere to company policies and learning objectives:
 - Set up log aggregation for debugging
 
 ## Examples
+
+### 🎮 Interactive Examples
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1iB9QXe5YjW2S0ELZunrcm6ZnMCBKdI7m?usp=sharing) **Try live examples in your browser!**
+
+### 📁 Local Examples
 
 The `vetting_python/examples/` directory contains comprehensive examples:
 

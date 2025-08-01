@@ -1,6 +1,6 @@
 # Makefile for VETTING Python framework development
 
-.PHONY: help install dev-install test lint format type-check clean build upload docs
+.PHONY: help install dev-install test lint format type-check clean build upload docs version
 
 # Default target
 help:
@@ -23,6 +23,13 @@ help:
 	@echo "  build        Build distribution packages"
 	@echo "  upload       Upload to PyPI (requires authentication)"
 	@echo "  upload-test  Upload to TestPyPI (requires authentication)"
+	@echo ""
+	@echo "Version Management:"
+	@echo "  version      Show current version"
+	@echo "  bump-patch   Bump patch version (e.g., 1.0.0 -> 1.0.1)"
+	@echo "  bump-minor   Bump minor version (e.g., 1.0.0 -> 1.1.0)"
+	@echo "  bump-major   Bump major version (e.g., 1.0.0 -> 2.0.0)"
+	@echo "  release      Create release (version required: make release VERSION=1.0.1)"
 	@echo ""
 	@echo "Documentation:"
 	@echo "  docs         Build documentation"
@@ -113,6 +120,43 @@ dev: format type-check test
 pre-release: clean format type-check test build
 	@echo "Pre-release checks completed!"
 	@echo "Ready for release. Run 'make upload' to deploy to PyPI."
+
+# Version management targets
+version:
+	@python scripts/update_version.py
+
+bump-patch:
+	@current_version=$$(python -c "import re; content=open('pyproject.toml').read(); print(re.search(r'version = \"([^\"]*)', content).group(1))"); \
+	IFS='.' read -ra ADDR <<< "$$current_version"; \
+	new_version="$${ADDR[0]}.$${ADDR[1]}.$$((ADDR[2] + 1))"; \
+	python scripts/update_version.py $$new_version
+
+bump-minor:
+	@current_version=$$(python -c "import re; content=open('pyproject.toml').read(); print(re.search(r'version = \"([^\"]*)', content).group(1))"); \
+	IFS='.' read -ra ADDR <<< "$$current_version"; \
+	new_version="$${ADDR[0]}.$$((ADDR[1] + 1)).0"; \
+	python scripts/update_version.py $$new_version
+
+bump-major:
+	@current_version=$$(python -c "import re; content=open('pyproject.toml').read(); print(re.search(r'version = \"([^\"]*)', content).group(1))"); \
+	IFS='.' read -ra ADDR <<< "$$current_version"; \
+	new_version="$$((ADDR[0] + 1)).0.0"; \
+	python scripts/update_version.py $$new_version
+
+release:
+ifndef VERSION
+	@echo "Error: VERSION is required. Usage: make release VERSION=1.0.1"
+	@exit 1
+endif
+	@echo "Creating release $(VERSION)..."
+	python scripts/update_version.py $(VERSION)
+	git add -A
+	git commit -m "Bump version to $(VERSION)"
+	git tag v$(VERSION)
+	@echo "Release $(VERSION) created locally!"
+	@echo "Next steps:"
+	@echo "  1. Push: git push && git push --tags"
+	@echo "  2. Create GitHub release or run Actions workflow"
 
 # Help target (shown by default)
 info:
